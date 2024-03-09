@@ -1,8 +1,9 @@
 terraform {
+  required_version = ">=1.7.4"
   required_providers {
     azurerm ={
         source = "hashicorp/azurerm"
-        version = "~>3.94.0"
+        version = ">=3.94.0"
     }
   }
 }
@@ -14,11 +15,6 @@ locals {
     tags = {
         "Environment" = var.Environment
     }
-}
-
-resource "azurerm_resource_group" "rg" {
-  name = var.resource_group_name
-  location = var.resource_group_location
 }
 
 resource "azurerm_storage_account" "mimistorageacc" {
