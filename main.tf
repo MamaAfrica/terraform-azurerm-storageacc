@@ -19,8 +19,8 @@ locals {
 
 resource "azurerm_storage_account" "mimistorageacc" {
   name = var.storage_account_name
-  location = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
+  location = var.resource_group_location
+  resource_group_name = var.resource_group_name
   account_tier = "Standard"
   public_network_access_enabled = false
   account_replication_type = var.Environment == "Production"? "GRS":"LRS"
