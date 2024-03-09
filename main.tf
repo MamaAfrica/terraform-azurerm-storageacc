@@ -24,5 +24,5 @@ resource "azurerm_storage_account" "mimistorageacc" {
   account_tier = "Standard"
   public_network_access_enabled = false
   account_replication_type = var.Environment == "Production"? "GRS":"LRS"
-  tags = locals.tags
+  tags = local.tags
 }
